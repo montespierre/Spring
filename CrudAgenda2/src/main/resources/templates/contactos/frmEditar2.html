@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/plantilla :: head">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<header th:replace="plantilla/plantilla :: header"> </header>
+	
+	
+	<div class="container">
+
+		<form th:action="@{/contactos/grabar}" th:object="${contacto}" method="post">
+
+
+			<input type="hidden" th:field="*{id}" id="id" />
+			
+			
+
+			<div class="card bg-light">
+				<div class="card-header bg-info text-white" th:text="${titulo}"></div>
+				<div class="card-body">
+					
+
+  
+					<div class="form-group row">
+						<label class="col-md-2" for="nombre">Nombre:</label> 
+						<input type="text" th:field="*{nombre}"
+						class="form-control form-control-sm col-md-10" id="nombre"
+						placeholder="Nombre de contacto"> 
+						<small></small>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-md-2" for="telefono">Telefono</label> 
+						<input type="text" th:field="*{telefono}"
+						class="form-control form-control-sm col-md-10" id="telefono"
+						placeholder="Telefono de contacto"> 
+						<small></small>
+					</div>
+					
+	
+
+
+
+				</div>
+				<div class="card-footer bg-light">
+					<input type="submit" class="btn btn-primary btn-sm" value="Guardar">
+				</div>
+			</div>
+		</form>
+
+	</div>
+
+	<footer th:replace="plantilla/plantilla :: footer"> </footer>
+</body>
+</html>
