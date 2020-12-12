@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/plantilla :: head">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<header th:replace="plantilla/plantilla :: header"> </header>
+
+	<div class="container">
+		<h1 th:text="${titulo}"></h1>
+
+		<table class="table">
+			<thead class="thead-light">
+				<tr>
+					<th scope="col">ID VENTA</th>
+					<th scope="col">ID EMPLEADO</th>
+					<th scope="col">FECHA</th>
+					<th scope="col">HORA</th>
+					<th scope="col">UNIDADES</th>
+					<th scope="col">SUBTOTAL</th>
+					<th scope="col">IGV</th>
+					<th scope="col">TOTAL</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="ct:${ventas}">
+					<td th:text="${ct.idVenta}"></td>
+					<td th:text="${ct.empleado.idEmpleado}"></td>
+					<td th:text="${ct.fechaVenta}"></td>
+					<td th:text="${ct.horaVenta}"></td>
+					<td th:text="${ct.unidTotales}"></td>
+					<td th:text="${ct.subTotal}"></td>
+					<td th:text="${ct.igv}"></td>
+					<td th:text="${ct.imporTotal}"></td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+	<footer th:replace="plantilla/plantilla :: footer"> </footer>
+
+
+</body>
+</html>
